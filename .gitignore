@@ -1,0 +1,38 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# NodeJS-related
+node_modules
+
+# Build folders
+build
+dist
+
+# IDEs
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Misc
+.editorconfig
+.gitattributes
+.DS_Store
+.env
+.env.local
+.env.*.local
+vite.config.?s.timestamp-*
+
+# Package managers
+npm-*.log*
+yarn-*.log*
+## Since we use yarn
+package-lock.json
+## Relevant to yarn 2 without zero-installs
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+.cache

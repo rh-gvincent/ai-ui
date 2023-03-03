@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Template
+metadata:
+  name: ai
+objects:
+  - apiVersion: cloud.redhat.com/v1alpha1
+    kind: Frontend
+    metadata:
+      name: ai
+    spec:
+      envName: ${ENV_NAME}
+      title: Assisted Installer
+      deploymentRepo: TBD
+      frontend:
+        paths:
+          - /apps/ai
+      image: ${IMAGE}:${IMAGE_TAG}
+      navItems: 
+      - appId: ai
+        title: Assisted Installer
+        href: "/ai"
+      module:
+        manifestLocation: "/apps/ai/fed-mods.json"
+        modules:
+          - id: "ai"
+            module: "./RootApp"
+            routes: 
+            - pathname: "/ai"
+
+parameters:
+  - name: ENV_NAME
+    required: true
+  - name: IMAGE_TAG
+    required: true
+  - name: IMAGE
+    value: TBD
